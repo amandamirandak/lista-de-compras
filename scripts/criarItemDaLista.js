@@ -2,6 +2,7 @@
 // Essa constante está ligada ao elemento HTML com o id "input-item" (geralmente um campo <input>)
 export const inputItem = document.getElementById("input-item");
 
+let contador = 0;
 
 // Exporta a função 'criarItemDaLista', que será usada para criar um novo item na lista de compras.
 export function criarItemDaLista() {
@@ -25,6 +26,10 @@ export function criarItemDaLista() {
 
     // Cria um parágrafo <p> para mostrar o nome do item digitado.
     const nomeItem = document.createElement("p");
+
+    
+
+    
 
     // Define o texto do parágrafo como o valor que o usuário digitou no input.
     nomeItem.innerText = inputItem.value;
