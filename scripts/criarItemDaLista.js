@@ -29,11 +29,19 @@ export function criarItemDaLista() {
 
     // Cria um checkbox para o item da lista
     const inputCheckBox = document.createElement("input");
-    inputCheckBox.type = "checkbox"; // Define o tipo do input como checkbox
-    inputCheckBox.id = "checkbox-" + contador++; // Define um id único para o checkbox
-    containerItemDaLista.appendChild(inputCheckBox); // Adiciona o checkbox ao container do item da lista
+    inputCheckBox.type = "checkbox";
+    inputCheckBox.id = "checkbox-" + contador++;
+    containerItemDaLista.appendChild(inputCheckBox);
 
-    
+    // Adiciona um evento para riscar ou remover
+    //o risco do texto ao marcar/desmarcar um item
+    inputCheckBox.addEventListener("change", function() {
+        if(inputCheckBox.checked){
+            nomeItem.style.textDecoration = "line-through";
+        } else {
+            nomeItem.style.textDecoration = "none";
+        }
+    });
 
     // Define o texto do parágrafo como o valor que o usuário digitou no input.
     nomeItem.innerText = inputItem.value;
@@ -47,4 +55,3 @@ export function criarItemDaLista() {
     // Retorna o <li> completo, que já contém o item digitado, pronto para ser adicionado na lista.
     return itemDaLista;
 }
-
